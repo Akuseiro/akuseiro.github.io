@@ -1,0 +1,358 @@
+@font-face { font-family: 'Athelas'; src: url('/fonts/Athelas-Regular.ttf');}
+@font-face { font-family: 'Athelas-I'; src: url('/fonts/Athelas-Italic.ttf');}
+@font-face { font-family: 'HelveticaNeue'; src: url('/fonts/HelveticaNeue.otf');}
+
+*,
+*::after,
+*::before
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: 'Athelas';
+    font-weight: normal;
+    vertical-align: baseline;
+    background: transparent;
+    -webkit-text-size-adjust: 100%;
+}
+
+::-moz-selection
+{
+    color: black;
+    background: white;
+}
+  
+::selection
+{
+    color: black;
+    background: white;
+}
+
+img, a
+{
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+blockquote
+{
+    quotes: none;
+}
+
+.home
+{
+    position: relative;
+}
+
+.home_header
+{
+    position: absolute;
+    top: 2.13333vh;
+    left: 2.13333vh;
+    display: block;
+    z-index: 10;
+    mix-blend-mode: difference;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.home_header h1
+{
+    font-family: 'HelveticaNeue';
+    font-size: 80pt;
+    color: white;
+}
+
+@media screen and (max-width: 769px) { .home_header { top: 24px; left: 24px; } .home_header h1 { font-size: 40pt; } }
+@media screen and (max-width: 310px) { .home_header { top: 15px; left: 15px; } .home_header h1 { font-size: 20pt; } }
+@media screen and (max-height: 365px) { .home_header { top: 24px; left: 24px; } .home_header h1 { font-size: 40pt; } }
+@media screen and (max-height: 215px) { .home_header { top: 15px; left: 15px; } .home_header h1 { font-size: 20pt; } }
+@media screen and (max-height: 65px) { .home_header { top: 7.5px; left: 7.5px; } .home_header h1 { font-size: 10pt; } }
+@media screen and (max-height: 35px) { .home_header { top: 3.75px; left: 3.75px; } .home_header h1 { font-size: 5pt; } }
+
+.home_video
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.home_video img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.levels
+{
+    display: block;
+    background-color: black;
+    color: white;
+}
+
+.retarded
+{
+    display: block;
+    width: 100%;
+    height: 100vh;
+}
+
+.retarded_me
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.retarded_me_quote
+{
+    margin: 7vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    text-transform: uppercase;
+    max-width: 80%;
+}
+
+.retarded_me_quote p
+{
+    font-family: 'Athelas';
+    font-size: 40pt;
+    text-align: justify;
+}
+
+.retarded_me_quote cite
+{
+    font-family: 'Athelas-I';
+    letter-spacing: 0.3vh;
+    font-size: 20pt;
+    margin-top: 15vh;
+}
+
+@media screen and (max-width: 769px) { .retarded { height: auto; } .retarded_me_quote { margin: 3.5vh; } .retarded_me_quote p { letter-spacing: 0.3vh; font-size: 20pt; } .retarded_me_quote cite { letter-spacing: 0.15vh; font-size: 10pt; margin-top: 7.5vh; } }
+@media screen and (max-width: 480px) { .retarded { height: auto; } .retarded_me_quote { margin: 1.75vh; } .retarded_me_quote p { letter-spacing: 0.15vh; font-size: 10pt; } .retarded_me_quote cite { letter-spacing: 0.075vh; font-size: 5pt; margin-top: 3.75vh; } }
+@media screen and (max-height: 365px) { .retarded_me_quote { margin: 3.5vh; } .retarded_me_quote p { letter-spacing: 0.3vh; font-size: 20pt; } .retarded_me_quote cite { letter-spacing: 0.15vh; font-size: 10pt; margin-top: 7.5vh; } }
+@media screen and (max-height: 100px) { .retarded_me_quote { margin: 1.75vh; } .retarded_me_quote p { letter-spacing: 0.15vh; font-size: 10pt; } .retarded_me_quote cite { letter-spacing: 0.075vh; font-size: 5pt; margin-top: 3.75vh; } }
+
+.bipolar
+{
+    display: block;
+    height: 100vh;
+    width: 100%;
+}
+
+.bipolar_im
+{
+    display: flex;
+    width: 100%;
+}
+
+.personality_1, .personality_2
+{
+    cursor: pointer;
+    position: relative;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.personality_1 img, .personality_2 img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.personality_1:hover .overlay, 
+.personality_2:hover .overlay
+{
+    opacity: 1;
+}
+
+.overlay_text
+{
+    font-family: 'Athelas';
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 65pt;
+    letter-spacing: 5px;
+}
+
+@media screen and (max-width: 769px) { .bipolar { height: 50vh; } .personality_1, .personality_2 { height: 50vh; } .overlay_text { font-size: 35pt; } }
+@media screen and (max-width: 480px) { .bipolar { height: auto; } .personality_1, .personality_2 { height: 50vh; } .overlay_text { font-size: 15pt; } }
+@media screen and (max-height: 769px) { .bipolar { height: 50vh; } .personality_1, .personality_2 { height: 50vh; } .overlay_text { font-size: 15pt; } }
+@media screen and (max-height: 365px) { .bipolar { height: auto; } .personality_1, .personality_2 { height: 50vh; } .overlay_text { font-size: 10pt; } }
+@media screen and (max-height: 250px) { .bipolar { height: auto; } .personality_1, .personality_2 { height: 50vh; } .overlay_text { font-size: 5pt; } }
+
+.useless
+{
+    height: 100vh;
+    width: 100%;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7vh;
+    text-align: center;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.useless_me
+{
+    max-width: 80%;
+}
+
+.inside_useless_me h1
+{
+    font-size: 80pt;
+    margin: 0;
+}
+
+.inside_useless_me p
+{
+    font-size: 40pt;
+    margin-top: 7vh;
+    text-align: justify;
+}
+
+@media screen and (max-width: 1024px) { .useless { height: auto; } .inside_useless_me h1 { font-size: 60pt; } .inside_useless_me p { font-size: 30pt; margin-top: 5vh; } }
+@media screen and (max-width: 769px) { .useless { height: auto; } .useless_me { max-width: 100%; } .inside_useless_me h1 { font-size: 40pt; } .inside_useless_me p { font-size: 20pt; margin-top: 3vh; } }
+@media screen and (max-width: 480px) { .useless { height: auto; } .useless_me { max-width: 100%; } .inside_useless_me h1 { font-size: 20pt; } .inside_useless_me p { font-size: 10pt; margin-top: 1vh; } }
+@media screen and (max-height: 365px) { .useless { height: auto; } .useless_me { max-width: 100%; } .inside_useless_me h1 { font-size: 20pt; } .inside_useless_me p { font-size: 10pt; margin-top: 3vh; } }
+@media screen and (max-height: 250px) { .useless { height: auto; } .useless_me { max-width: 100%; } .inside_useless_me h1 { font-size: 10pt; } .inside_useless_me p { font-size: 5pt; margin-top: 1vh; } }
+
+.useless_info
+{
+    height: auto;
+    display: block;
+    padding: 7vh;
+    margin-bottom: 10vh;
+    padding-top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.useless_info_in
+{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 80%;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.useless_info_str, .useless_info_mid, .useless_info_end
+{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    margin-bottom: 7vh;
+    flex: 1;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.useless_info_str h3, .useless_info_mid h3, .useless_info_end h3
+{
+    font-size: 40pt;
+    margin-bottom: 20px;
+}
+
+.useless_info_str p, .useless_info_mid p, .useless_info_end p
+{
+    font-size: 40pt;
+    margin: 5px 0;
+}
+
+@media screen and (max-width: 1024px) { .useless_info { margin-bottom: 5vh; } .useless_info_str, .useless_info_mid, .useless_info_end { margin-left: 5vh; margin-right: 5vh; margin-top: 3vh; margin-bottom: 5vh; } .useless_info_in { flex-direction: column; } .useless_info_str h3, .useless_info_mid h3, .useless_info_end h3 { font-size: 30pt; } .useless_info_mid h3, .useless_info_end h3 { margin-top: 5vh; } .useless_info_str p, .useless_info_mid p, .useless_info_end p { font-size: 30pt; } }
+@media screen and (max-width: 769px) { .useless_info { margin-bottom: 3vh; } .useless_info_str, .useless_info_mid, .useless_info_end { margin-left: 3vh; margin-right: 3vh; margin-top: 2vh; margin-bottom: 3vh; } .useless_info_in { flex-direction: column; max-width: 100%; } .useless_info_str h3, .useless_info_mid h3, .useless_info_end h3 { font-size: 20pt; } .useless_info_mid h3, .useless_info_end h3 { margin-top: 4vh; } .useless_info_str p, .useless_info_mid p, .useless_info_end p { font-size: 20pt; } }
+@media screen and (max-width: 480px) { .useless_info { margin-bottom: 2vh; } .useless_info_str, .useless_info_mid, .useless_info_end { margin-left: 2vh; margin-right: 2vh; margin-top: 1vh; margin-bottom: 2vh; } .useless_info_in { flex-direction: column; max-width: 100%; } .useless_info_str h3, .useless_info_mid h3, .useless_info_end h3 { font-size: 10pt; } .useless_info_mid h3, .useless_info_end h3 { margin-top: 3vh; } .useless_info_str p, .useless_info_mid p, .useless_info_end p { font-size: 10pt; } }
+@media screen and (max-height: 365px) { .useless_info_str, .useless_info_mid, .useless_info_end { margin-left: 2vh; margin-right: 2vh; margin-top: 1vh; margin-bottom: 2vh; } .useless_info_in { flex-direction: column; max-width: 100%; } .useless_info_str h3, .useless_info_mid h3, .useless_info_end h3 { font-size: 10pt; } .useless_info_mid h3, .useless_info_end h3 { margin-top: 3vh; } .useless_info_str p, .useless_info_mid p, .useless_info_end p { font-size: 10pt; } }
+@media screen and (max-width: 260px) { .useless_info_str, .useless_info_mid, .useless_info_end { margin-left: 2vh; margin-right: 2vh; margin-top: 1vh; margin-bottom: 2vh; } .useless_info_in { flex-direction: column; max-width: 100%; } .useless_info_str h3, .useless_info_mid h3, .useless_info_end h3 { font-size: 50pt; } .useless_info_mid h3, .useless_info_end h3 { margin-top: 3vh; } .useless_info_str p, .useless_info_mid p, .useless_info_end p { font-size: 5pt; } }
+
+.paranoia
+{
+    display: block;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.paranoia_vid
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.paranoia_vid img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fear
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    z-index: 10;
+    mix-blend-mode: difference;
+}
+
+.fear a
+{
+    cursor: pointer;
+    font-family: 'Athelas';
+    font-size: 80pt;
+    color: white;
+    text-align: center;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+@media screen and (max-width: 1024px) { .fear a { font-size: 60pt; } }
+@media screen and (max-width: 769px) { .fear a { font-size: 30pt; } }
+@media screen and (max-width: 330px) { .fear a { font-size: 15pt; } }
